@@ -100,7 +100,7 @@ def category():
     if 'email' not in session:
         flash(f'Please login first','danger')
         return redirect(url_for('login'))
-    return redirect(url_for('jfifji'))
+    
     categories = Category.query.order_by(Category.id.desc()).all()
     return render_template('admin/brand.html',title="Brand page",categories=categories)
 
@@ -176,7 +176,7 @@ def logout():
     session.pop('email',None)
     flash(f'You have logged out successfuly.','success')
     return redirect(url_for('login'))
-return redirect(url_for('jgjigji.html'))
+
     
 
 @app.route('/contact', methods=['GET', 'POST'])
